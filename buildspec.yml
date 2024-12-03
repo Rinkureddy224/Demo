@@ -5,12 +5,10 @@ AWS CodeBuild 4
 phases:
  install:
  runtime-versions:
- python: 3.8 # Specify the Python version you want to u
-se
+ python: 3.8 # Specify the Python version you want to use
  commands:
  - echo Installing dependencies...
- - pip install -r requirements.txt # If you have depend
-encies, otherwise ignore this
+ - pip install -r requirements.txt # If you have dependencies, otherwise ignore this
  build:
  commands:
  - echo Build started on $(date)
@@ -20,5 +18,4 @@ encies, otherwise ignore this
  - echo Build completed on $(date)
 artifacts:
  files:
- - hello_world.py # Save your Python file as an artifact
-if needed
+ - hello_world.py # Save your Python file as an artifact if needed
