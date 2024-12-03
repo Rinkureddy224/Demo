@@ -3,18 +3,24 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: 3.8 # Specify the Python version you want to use
+      python: 3.8
     commands:
       - echo Installing dependencies...
-      - pip install -r requirements.txt # If you have dependencies, otherwise ignore this
+      - pip --version  # Check pip version
+      - python --version  # Check Python version
+      - echo "Listing available packages:"
+      - pip list  # List installed packages (if any)
+      - echo "Attempting to install from requirements.txt..."
+      - pip install -r requirements.txt
   build:
     commands:
       - echo Build started on $(date)
-      - python hello_world.py # Run the Python script
+      - python hello_world.py
   post_build:
     commands:
       - echo Build completed on $(date)
 
 artifacts:
   files:
-    - hello_world.py # Save your Python file as an artifact if needed
+    - hello_world.py
+
