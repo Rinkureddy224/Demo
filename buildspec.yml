@@ -1,0 +1,24 @@
+yaml
+Copy code
+version: 0.2
+AWS CodeBuild 4
+phases:
+ install:
+ runtime-versions:
+ python: 3.8 # Specify the Python version you want to u
+se
+ commands:
+ - echo Installing dependencies...
+ - pip install -r requirements.txt # If you have depend
+encies, otherwise ignore this
+ build:
+ commands:
+ - echo Build started on $(date)
+ - python hello_world.py # Run the Python script
+ post_build:
+ commands:
+ - echo Build completed on $(date)
+artifacts:
+ files:
+ - hello_world.py # Save your Python file as an artifact
+if needed
